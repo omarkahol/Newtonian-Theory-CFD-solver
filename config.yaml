@@ -1,0 +1,38 @@
+# ==============================================================================
+# NEWTONIAN AERODYNAMICS SOLVER CONFIGURATION
+# ==============================================================================
+
+# Geometry
+geometry:
+  stl_file: "starshipv21.stl"
+  scale: 1.0
+
+# Vehicle Body Reference Axes (in STL mesh coordinates)
+# Defines the aircraft/spacecraft coordinate frame:
+body_axes:
+  roll_axis: [0.0, 1.0, 0.0]     # Longitudinal / Forward axis (points towards nose)
+  yaw_axis: [0.0, 0.0, 1.0]      # Vertical / Dorsal axis (points upward)
+  pitch_axis: [1.0, 0.0, 0.0]    # Spanwise / Starboard axis (or "auto" for yaw x roll)
+
+# Aerodynamic Flight Conditions
+flight_condition:
+  alpha_deg: 40.0                # Angle of attack [deg]
+  beta_deg: 0.0                  # Sideslip angle [deg]
+  mach_infinity: 10.0            # Freestream Mach number (M_inf)
+  gamma: 1.4                    # Ratio of specific heats (cp/cv)
+
+# Aerodynamic Properties
+aerodynamics:
+  reference_area: 100.0          # Reference area S_ref [m^2] for Cl and Cd
+  center_of_gravity: [-22.28, -5.0, -0.02]  # [X, Y, Z] CG position in meters, or "auto" for mesh centroid
+  wake_cp: "auto"                # Shadowed/wake region Cp: "auto" (-1/M_inf^2) or set float number (e.g. 0.0, -0.01)
+  # Note: Cp_max is automatically calculated from mach_infinity and gamma via the Rayleigh Pitot formula!
+
+# Ray-Tracing Shadow Occlusion Settings
+shadowing:
+  enabled: true                  # Set false to bypass raycast shadow checks
+  ray_epsilon: 1.0e-4
+
+# Output Directory
+output:
+  output_dir: "results"

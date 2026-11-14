@@ -1,0 +1,36 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# IDEs and editors
+.vscode/
+.idea/
+*.swp
+*.swo
+.notebook/
+
+# Operating System files
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+
+# Simulation outputs & intermediate data
+results/
+*.vtu
+*.npz
